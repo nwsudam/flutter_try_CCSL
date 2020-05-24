@@ -1,6 +1,10 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
+// void main() => runApp(MyApp());
+//main() {
+//  runApp(MyApp());
+//}
 void main() => runApp(
       DevicePreview(
 //    enabled: !kReleaseMode,
@@ -13,13 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       locale: DevicePreview.of(context).locale, // <--- Add the locale
       builder: DevicePreview.appBuilder, // <--- Add the builder
-      title: 'Flutter Demo',
+      title: 'Flutter ep 12',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Navigation'),
+      home: MyHomePage(title: 'Flutter ep 12'),
     );
   }
 }
@@ -34,27 +40,122 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        child: ListView(
+          scrollDirection: Axis.vertical,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
             ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('jjgjjgjgjgjgjgjgjg'),
+              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
+            ),
+            Divider(),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
