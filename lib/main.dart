@@ -40,13 +40,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  var items = List<String>.generate(100, (index) => 'Item $index');
 
   @override
   Widget build(BuildContext context) {
@@ -55,104 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Container(
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('jjgjjgjgjgjgjgjgjg'),
-              subtitle: Text('jjgjjgjgjgjgjgjgjg'),
-              trailing: Icon(Icons.menu),
-              onTap: () {},
-            ),
-            Divider(),
-          ],
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(items[index]),
+              subtitle: Text("Sub"),
+            );
+          },
         ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
