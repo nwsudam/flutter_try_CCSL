@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder, // <--- Add the builder
       title: 'Flutter ep 12',
       theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.red,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter ep 12'),
     );
@@ -40,34 +40,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController title = TextEditingController();
+  var items = List<String>.generate(100, (index) => 'Item $index');
 
   @override
   Widget build(BuildContext context) {
-    title.text = 'Hello';
-    String test = title.text;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                maxLength: 8,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                ),
-                controller: title,
-                onChanged: (text) {
-                  print(text);
-                },
-                keyboardType: TextInputType.number,
-              ),
-            )
-          ],
+      body: Container(
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(items[index]),
+              subtitle: Text("Sub"),
+            );
+          },
         ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
